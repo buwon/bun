@@ -80,7 +80,7 @@ export class BuildCommand extends Command {
     }
     const cwd = bun.name.split("/")[0];
     archive = archive.folder(cwd) ?? archive;
-    for (const filename of ["bootstrap", "runtime.ts"]) {
+    for (const filename of ["bootstrap", "nodejs/runtime.ts"]) {
       const path = join(__dirname, "..", filename);
       archive.file(filename, createReadStream(path));
     }
